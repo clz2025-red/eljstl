@@ -44,6 +44,9 @@
 		
 		}else if(3이면){
 			<span style="color: blue">파랑</span>
+		
+		}else {
+			<span>잘못된 파라미터</span>
 		}
 		-->	
 		
@@ -52,24 +55,20 @@
 		--------------------------------------------------------
 		<h3>jstl(if else --> choose when : switch case모양)</h3>
 		
-
-		
-		
-		<!-- 
-		if(1이면){
-			<span style="color: red">빨강</span>
-		}
-		
-		if(2이면){
-			<span style="color: green">초록</span>
-		}
-		
-		if(3이면){
-			<span style="color: blue">파랑</span>
-		}
-		-->	
-			
-			
+		<c:choose>
+			<c:when test="${param.color==1}">
+				<span style="color: red">빨강</span>
+			</c:when>
+			<c:when test="${param.color==2}">
+				<span style="color: green">초록</span>
+			</c:when>
+			<c:when test="${param.color==3}">
+				<span style="color: blue">파랑</span>
+			</c:when>
+			<c:otherwise>
+				<span>잘못된 파라미터</span>
+			</c:otherwise>
+		</c:choose>
 		
 	</body>
 </html>
